@@ -49,12 +49,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'todo.urls'
+ROOT_URLCONF = 'todo.mysite.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'main//templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'todo.wsgi.application'
+WSGI_APPLICATION = 'todo.mysite.wsgi.application'
 
 
 # Database
