@@ -31,7 +31,6 @@
     
     <body>
         <header>
-            
             <div class="col-12 text-center myhead">
                 <h1 class="color-me" href="#" style="margin-top: 2px;"> To Do List
                     <img src="static/images/check.png" width="30" height="30">  
@@ -39,7 +38,9 @@
             </div>
         </header>
 
-        {% block content %}{% endblock content %}
+        <div class="container" style="margin-top: 1.8cm;">
+            {% block content %}{% endblock content %}
+        </div>
     </body>
 
 </html>

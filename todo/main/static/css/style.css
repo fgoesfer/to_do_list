@@ -16,9 +16,27 @@
     border-width: 1px;
 }
 
-/* .head-border{
-    border-bottom: double;
-    border-color: rgb(107, 107, 107);
-    border-width: 1px;
-    
-} */
+.input[type=text] {
+    border: none;
+    border-bottom: 2px solid rgba(124, 81, 2, 0.164);
+    width: 50%;
+    font-size: 20px;
+  }
+
+.button {
+    background-color: rgba(194, 194, 194, 0.158); 
+    border: 1px solid black;
+    border-radius: 10px;
+    color:black;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+  }
+
+  .button:hover {
+    background-color: rgba(196, 185, 31, 0.26);
+    color: black;
+  }
+
+
