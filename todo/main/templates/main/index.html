@@ -8,19 +8,20 @@
             <input class="input" type="text" placeholder="Type here..." required name="content">
             <button class="button" type="submit" style="margin-left: 1.5cm;"> Submmit</button>
         </form>
+
+        
     </div>
 </div>
 
 <div class="row">
     <div class="col">
-        <div class="list-group" style="margin-top: 2cm;">
-            <a href="#" class="list-group-item list-group-item-action active">
-              Cras justo odio
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-            <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-            <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-            <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+        <div class="list-group" style="margin-top: .5cm;">
+            <form action="delete_all/" method="POST">
+                <button class="button_del" type="submit"> Delete</button>
+            </form>
+            {% for item in todo_items %}
+                <li class="list-group-item" style="width: 50%;">{{item.text}}</li>
+            {% endfor %}
           </div>
     </div>
 </div>

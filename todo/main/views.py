@@ -6,14 +6,23 @@ from .models import Todo
 
 
 def home(request):
-    return render(request, 'main/index.html')
+    todo_items = Todo.objects.all().order_by('-added_date')
+    return render(request, 'main/index.html', {'todo_items': todo_items})
 
 @csrf_exempt
 def add_to_do(request):
     current_data = timezone.now()
     content = request.POST['content']
-    #Todo.added_date = current_data
-    #Todo.text = content
-    aux = Todo.objects.create(added_date=current_data, text=content)
+    Todo.objects.create(added_date=current_data, text=content)
+    
+    return HttpResponseRedirect("/")
+
+@csrf_exempt
+def delete_all(request):
+    """
+    Function that delets all the list
+    """
+
+    Todo.objects.all().delete()
     
     return HttpResponseRedirect("/")

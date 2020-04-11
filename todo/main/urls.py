@@ -19,5 +19,6 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('add_to_do/', views.add_to_do)
+    path('add_to_do/', views.add_to_do),
+    path('delete_all/', views.delete_all)
 ]

@@ -39,4 +39,22 @@
     color: black;
   }
 
+.button_del {
+    background-color: rgba(245, 61, 61, 0.925); 
+    border: 1px solid rgb(165, 144, 144);
+    border-radius: 10px;
+    color:white;
+    font-weight: 700;
+    padding: 7px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+  }
+
+.button_del:hover {
+    background-color: rgba(238, 63, 51, 0.26);
+    color: black;
+  }
+
+
 
