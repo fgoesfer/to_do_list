@@ -20,5 +20,6 @@ from . import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('add_to_do/', views.add_to_do),
-    path('delete_all/', views.delete_all)
+    path('delete_all/', views.delete_all),
+    path('add_completed/<todo_id>/', views.add_completed)
 ]

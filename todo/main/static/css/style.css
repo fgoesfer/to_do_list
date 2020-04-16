@@ -19,7 +19,7 @@
 .input[type=text] {
     border: none;
     border-bottom: 2px solid rgba(124, 81, 2, 0.164);
-    width: 50%;
+    width: 30%;
     font-size: 20px;
   }
 
@@ -28,7 +28,7 @@
     border: 1px solid black;
     border-radius: 10px;
     color:black;
-    padding: 10px 20px;
+    padding: 8px 15px;
     text-align: center;
     display: inline-block;
     font-size: 14px;
@@ -56,5 +56,18 @@
     color: black;
   }
 
+.lista{
+  color: black;
+  font-weight: 700;
+}
+
+.lista:hover{
+  color: black;
+  font-weight: 700;
+}
+
+.uncomp{
+  text-decoration: line-through
+}
 
 

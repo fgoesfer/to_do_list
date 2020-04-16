@@ -5,11 +5,9 @@
     <div class="col">
         <h3>Add your task</h3>
         <form action="add_to_do/" method="POST">
-            <input class="input" type="text" placeholder="Type here..." required name="content">
+            <input class="input" type="text" placeholder="Type here..." required name="content" >
             <button class="button" type="submit" style="margin-left: 1.5cm;"> Submmit</button>
         </form>
-
-        
     </div>
 </div>
 
@@ -20,11 +18,52 @@
                 <button class="button_del" type="submit"> Delete</button>
             </form>
             {% for item in todo_items %}
-                <li class="list-group-item" style="width: 50%;">{{item.text}}</li>
+            <div class="input-group mb-3">
+                {% if item.complete %}
+                    <a href="add_completed/{{item.id}}" class="lista uncomp"><li class="list-group-item" style="width: 10cm;">{{item.text}}</li></a>
+                {% else %}
+                    <a href="add_completed/{{item.id}}" class="lista "><li class="list-group-item " style="width: 10cm;">{{item.text}}</li></a>
+                {% endif %}
+            </div>
             {% endfor %}
-          </div>
+
+        </div>
+    </div>
+    <div class="col6">
+        <body>
+            <div id = "container" style = "width: 550px; height: 400px; margin: 0 auto">
+            </div>
+            <script language = "JavaScript">
+               function drawChart() {
+                  // Define the chart to be drawn.
+                  var data = new google.visualization.DataTable();
+                  data.addColumn('string', 'Todo');
+                  data.addColumn('number', 'Percentage');
+                  data.addRows([
+                     ['Completed', {{len_completed}}],
+                     ['To Do', {{len_not}}]
+                  ]);
+                     
+                  // Set chart options
+                  var options = {
+                     'width':550,
+                     'height':400,
+                     pieHole: 0.4,
+                     colors: ['#d099f7', '#f4d08c'],
+                     pieSliceTextStyle: {color: 'black', fontSize:14}
+                     //data: {textStyle: {color: 'red'}},
+                  };
+      
+                  // Instantiate and draw the chart.
+                  var chart = new google.visualization.PieChart(document.getElementById('container'));
+                  chart.draw(data, options);
+               }
+               google.charts.setOnLoadCallback(drawChart);
+            </script>
+         </body>
     </div>
 </div>
+
 
 
 {% endblock content %}
